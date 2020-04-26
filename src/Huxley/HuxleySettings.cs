@@ -26,5 +26,34 @@ namespace Huxley {
         public Guid DarwinStaffAccessToken { get; set; }
         public Guid ClientAccessToken { get; set; }
         public int DelayMinutesThreshold { get; set; }
+        public String NaptanStationsUrl{
+            get{
+                return System.Configuration.ConfigurationManager.AppSettings["NaptanStationsUrl"];
+            }
+
+            set { }
+        }
+        public String NreStationsUrl {
+            get {
+                return System.Configuration.ConfigurationManager.AppSettings["NREStationsUrl"];
+            }
+
+            set { }
+        }
+        public String StationLocalRef {
+            get {
+                return System.Configuration.ConfigurationManager.AppSettings["LocalCSVFile"];
+            }
+
+            set { }
+        }
+
+        public String StationsChangeLog {
+            get {
+                return System.Configuration.ConfigurationManager.AppSettings["StationsChangeLog"];
+            }
+
+            set { }
+        }
     }
 }

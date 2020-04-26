@@ -23,10 +23,36 @@ using System.Web.Http;
 namespace Huxley {
     public static class WebApiConfig {
         public static void Register(HttpConfiguration config) {
-            config.Routes.MapHttpRoute("CrsCodesApi", "crs/{query}", new { controller = "Crs", query = RouteParameter.Optional });
-            config.Routes.MapHttpRoute("ServiceDetailsApi", "service/{*serviceid}", new { controller = "Service" });
-            config.Routes.MapHttpRoute("StationDelaysApi", "delays/{crs}/{filtertype}/{filtercrs}/{numrows}/{std}",
-                new {
+            config.Routes.MapHttpRoute(
+                name: "CrsCodesApi",
+                routeTemplate: "crs/{query}",
+                defaults: new { controller = "Crs", query = RouteParameter.Optional });
+            config.Routes.MapHttpRoute(
+               name: "LocationCodesApi",
+               routeTemplate: "locations/{filter}/{location}/{numresults}",
+                defaults: new {
+                    controller = "Location",
+                    filter = RouteParameter.Optional,
+                    location = RouteParameter.Optional,
+                    numresults = RouteParameter.Optional,
+                });
+            config.Routes.MapHttpRoute(
+                name: "NreStationApi",
+                routeTemplate: "crslocations/{filter}/{location}/{numresults}",
+                defaults: new {
+                    controller = "Nre",
+                    filter = RouteParameter.Optional,
+                    location = RouteParameter.Optional,
+                    numresults = RouteParameter.Optional,
+                });
+            config.Routes.MapHttpRoute(
+                name: "ServiceDetailsApi",
+                routeTemplate: "service/{*serviceid}",
+                defaults: new { controller = "Service" });
+            config.Routes.MapHttpRoute(
+                name: "StationDelaysApi",
+                routeTemplate: "delays/{crs}/{filtertype}/{filtercrs}/{numrows}/{std}",
+                defaults: new {
                     controller = "Delays",
                     std = RouteParameter.Optional,
                 });

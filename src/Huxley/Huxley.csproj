@@ -112,6 +112,18 @@
       <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="GeoUk">
+      <HintPath>..\packages\GeoUK.1.1.0\lib\portable-net45+win+wpa81+wp80\GeoUk.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="GeoCoordinate.NetStandard1">
+      <HintPath>..\packages\GeoCoordinate.NetStandard1.1.0.1\lib\netstandard1.1\GeoCoordinate.NetStandard1.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
@@ -120,7 +132,6 @@
     <Compile Include="Controllers\StationController.cs" />
     <Compile Include="Controllers\LdbController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
-    <Compile Include="CrsRecord.cs" />
     <Compile Include="HuxleySettings.cs" />
     <Compile Include="ILdbClient.cs" />
     <Compile Include="LdbClient.cs" />
@@ -145,6 +156,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Models\Stations\CrsRecord.cs" />
+    <Compile Include="Utils\IStationConfig.cs" />
+    <Compile Include="Utils\StationConfig.cs" />
+    <Compile Include="Controllers\NreController.cs" />
+    <Compile Include="Models\NREStationModel.cs" />
+    <Compile Include="Models\NREStationRequest.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="android-icon-144x144.png" />
@@ -430,6 +448,7 @@
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </None>
+    <None Include="StationsChangeLog.log" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -441,6 +460,10 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ldbServiceReference\" />
     <WCFMetadataStorage Include="Service References\ldbStaffServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Stations\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -469,6 +492,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
