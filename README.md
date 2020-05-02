@@ -26,7 +26,7 @@ In addition it has a function for calculating delays which allows you to build u
 
 [![Train Disruption Indicator](https://unop.uk/wp-content/uploads/2015/05/trains.jpg "Train Disruption Indicator")](https://unop.uk/train-disruption-indicator-with-a-blinky-tape-rgb-led-strip-and-raspberry-pi/)
 
-You can also use it to build mobile web apps such as [InstaBail](https://instabail.uk/), which generates excuses based on real transport disruptions.
+You can also use it to build mobile apps such as On Rails, which generates excuses based on real transport disruptions.
 
 [![InstaBail](https://unop.uk/wp-content/uploads/2015/07/ios2.png "InstaBail")](https://instabail.uk/)
 
