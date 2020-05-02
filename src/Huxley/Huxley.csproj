@@ -159,10 +159,10 @@
     <Compile Include="Models\Stations\CrsRecord.cs" />
     <Compile Include="Utils\IStationConfig.cs" />
     <Compile Include="Utils\StationConfig.cs" />
-    <Compile Include="Controllers\NreController.cs" />
     <Compile Include="Models\NREStationModel.cs" />
     <Compile Include="Models\NREStationRequest.cs" />
     <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Utils\LocationRequestHander.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="android-icon-144x144.png" />

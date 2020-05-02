@@ -37,15 +37,6 @@ namespace Huxley {
                     numresults = RouteParameter.Optional,
                 });
             config.Routes.MapHttpRoute(
-                name: "NreStationApi",
-                routeTemplate: "crslocations/{filter}/{location}/{numresults}",
-                defaults: new {
-                    controller = "Nre",
-                    filter = RouteParameter.Optional,
-                    location = RouteParameter.Optional,
-                    numresults = RouteParameter.Optional,
-                });
-            config.Routes.MapHttpRoute(
                 name: "ServiceDetailsApi",
                 routeTemplate: "service/{*serviceid}",
                 defaults: new { controller = "Service" });
